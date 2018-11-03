@@ -17,28 +17,24 @@ You can find out more about Twilio Autopilot here:
 ## Templates
 Templates provide samples for creating Twilio Autopilot Assistants, Actions, StyleSheets, and Functions.
 
-####Assistants
-
+#### Assistants
 An Assistant is a conversational application or bot that you can deploy across different channels with Twilio's Autopilot. The templates are complete virtual assistants that you can use as a starting point or blueprint.
 
 [Autopilot Assistants](https://www.twilio.com/docs/autopilot/api/assistant)
 
-####Actions
-
+#### Actions
 Autopilot Actions instruct an Autopilot virtual assistant how to perform a given Task. The templates provide examples of different ways to use actions to implement tasks and craft different conversational experiences.
 
 [Twilio Autopilot Actions](https://www.twilio.com/docs/autopilot/actions)
 
-####StyleSheets
-
+#### StyleSheets
 StyleSheets enable you to give your Assistant a style by specifying its voice, error messages, success messages, and data collection validation behavior.
 
 The templates are the different personalities you can use for your virtual assistant or bot.
 
 [Autopilot StyleSheets](https://www.twilio.com/docs/autopilot/api/assistant/stylesheet)
 
-####Functions
-
+#### Functions
 The Function Templates provide examples of backend implementations for Autopilot Tasks using Twilio Serverless Functions.
 
 [Autopilot Function Library](https://www.twilio.com/docs/autopilot/function-library)
