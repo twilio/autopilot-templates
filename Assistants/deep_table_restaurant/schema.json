@@ -1,0 +1,223 @@
+{
+    "friendlyName" : "deep-table-restaurant",
+    "logQueries" : true,
+    "uniqueName" : "deep-table-restaurant",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://welcome",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "voice" : {
+                "say_voice" : "Polly.Salli"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "welcome",
+            "actions" : {
+                "actions": [
+                    {
+                        "say": 
+                        {
+                            "speech" : "Welcome to Deep Table, the worlds smartest restaurant, I'm Deep Table's  Virtual Assistant, I can tell you about todays special or help you make a reservation, What would you like to do today?"
+                        }
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "get-specials",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say": 
+                        {
+                            "speech" : "Today's special is duck confit with roasted Brussels sprouts, super recommended, is there anything else I can help you with?"
+                        }
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What's today's specials?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is the special today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "do you have a special today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you have for special today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want today's special"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "dinner special"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "today's special"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get today's special"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can you tell me what's the special today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "are there any specials"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "specials"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "make-reservation",
+            "actions" : {
+                "actions": [
+                    {
+                        "collect": {
+                            "name": "make_reservation",
+                            "questions": [
+                                {
+                                    "question": {
+                                        "say": "Great, I can help you with that. What's your first name?"
+                                    },
+                                    "name": "first_name",
+                                    "type": "Twilio.FIRST_NAME"
+                                },
+                                {
+                                    "question": {
+                                        "say": "When day would you like your reservation for?"
+                                    },
+                                    "name": "date",
+                                    "type": "Twilio.DATE"
+                                },
+                                {
+                                    "question": {
+                                        "say": "Great at what time?"
+                                    },
+                                    "name": "time",
+                                    "type": "Twilio.TIME"
+                                },
+                                {
+                                    "question": {
+                                        "say": "For how many people"
+                                    },
+                                    "name": "party_size",
+                                    "type": "Twilio.NUMBER"
+                                }
+                            ],
+                            "on_complete": {
+                                "redirect": "task://confirm-reservation"
+                            }
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book a table"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "make a reservation"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to make a reservation"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need a table"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to book a table"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to make a reservation please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like to make a reservation"
+                },{
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a table for dinner"
+                },{
+                    "language" : "en-US",
+                    "taggedText" : "make reservation"
+                },{
+                    "language" : "en-US",
+                    "taggedText" : "make reservation please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "confirm-reservation",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say": 
+                        {
+                            "speech" : "Ok 'x' name. Your reservation for 'x' date at 'x' time for 'x' people is now confirmed. thank you for booking with us"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say": 
+                        {
+                            "speech" : "Welcome to Deep Table, the worlds smartest restaurant, I'm Deep Table's  Virtual Assistant, I can tell you about todays special or help you make a reservation, What would you like to do today?"
+                        }
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ]
+}

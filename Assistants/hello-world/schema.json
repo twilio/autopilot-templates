@@ -1,0 +1,39 @@
+{
+    "friendlyName" : "hello-world",
+    "logQueries" : true,
+    "uniqueName" : "hello-world",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://hello-world",
+            "fallback" : "task://hello-world",
+            "collect" : {
+                "validate_on_failure" : "task://hello-world"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "voice" : {
+                "say_voice" : "Polly.Salli"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "hello-world",
+            "actions" : {
+                "actions": [
+                    {
+                        "say": 
+                        {
+                            "speech" : "Hello World"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ]
+}
