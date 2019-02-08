@@ -33,7 +33,12 @@
                 ]
             },
             "fields" : [],
-            "samples" : []
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello World"
+                }
+            ]
         }
     ]
 }
