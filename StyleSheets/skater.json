@@ -1,0 +1,30 @@
+{
+	"style_sheet": {
+    "name":"Skater",
+		"voice": {
+			"say_voice": "Polly.Justin"
+		},
+		"collect": {
+			"validate": {
+				"on_failure": {
+					"messages": [
+						{
+							"say": "Yo, that's not right, say that again"
+						},
+						{
+							"say": "you're bananas, that doesn't sound right to me. I'll give you one more chance"
+						},
+						{
+							"say": "I'm done with you this is your last chance, go ahead and say that again"
+						}
+					],
+					"repeat_question": false
+				},
+				"on_success": {
+					"say": ""
+				},
+				"max_attempts": 4
+			}
+		}
+	}
+}

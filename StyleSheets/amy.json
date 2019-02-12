@@ -1,0 +1,30 @@
+{
+	"style_sheet": {
+    "name":"Amy",
+		"voice": {
+			"say_voice": "Polly.Amy"
+		},
+		"collect": {
+			"validate": {
+				"on_failure": {
+					"messages": [
+						{
+							"say": "Pardon me, I did not understand you. No biggie. can you please say that again."
+						},
+						{
+							"say": "I'm sorry to ask, but, can you please repeat that"
+						},
+						{
+							"say": "Do you think it might be possible to say it one more time"
+						}
+					],
+					"repeat_question": false
+				},
+				"on_success": {
+					"say": "Lovely"
+				},
+				"max_attempts": 4
+			}
+		}
+	}
+}
