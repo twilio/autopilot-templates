@@ -1,0 +1,15 @@
+{
+	"actions": [
+		{
+			"show": {
+				"body": "Order: 1 Large Coffee",
+				"subject":"Summary",
+				"images": [ {
+				    "label": "small",
+				    "url": "https://megacoffe.ai/large_coffee.png"
+				    
+				}]
+			}
+		}
+	]
+}

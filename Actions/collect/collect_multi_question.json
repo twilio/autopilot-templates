@@ -1,0 +1,44 @@
+{
+	"actions": [
+		{
+			"say": "Great! I can help you make a reservation. "
+		},
+		{
+			"collect": {
+				"name": "make_reservation",
+				"questions": [
+					{
+						"question": "What's your first name?",
+						"name": "first_name",
+						"type": "Twilio.FIRST_NAME"
+					},
+					{
+						"question": "For what Date?",
+						"name": "reservation_date",
+						"type": "Twilio.DATE"
+					},
+					{
+						"question": "For what time?",
+						"name": "reservation_time",
+						"type": "Twilio.TIME"
+					},
+					{
+						"question": "for how many people?",
+						"name": "party_size",
+						"type": "Twilio.NUMBER"
+					},
+					{
+						"question": "Any special requests?",
+						"name": "special_requests"
+					}
+				],
+				"on_complete": {
+					"redirect": {
+						"method": "POST",
+						"uri": "https://debt-great-5089.twil.io/deep_table"
+					}
+				}
+			}
+		}
+	]
+}

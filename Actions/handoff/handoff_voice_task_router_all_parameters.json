@@ -1,0 +1,18 @@
+{
+	"actions": [
+		{
+			"say": "Hold on, we are connecting you with an agent"
+		},
+		{
+			"handoff": {
+				"channel": "voice",
+				"uri": "taskrouter:// INSERT TASK ROUTER WORKFLOW SID",
+				"wait_url": "INSERT TASK ROUTER WAIT URL",
+				"wait_url_method": "GET",
+				"action": "INSERT TASK ROUTER ACTION URL",
+				"priority": "5",
+				"timeout": "200"
+			}
+		}
+	]
+}

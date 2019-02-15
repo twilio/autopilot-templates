@@ -1,0 +1,12 @@
+{
+    "Redirect to a task": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Redirect a task",
+        "fileName" : "Actions/redirect/redirect_to_task.json"
+    }, 
+	"Redirect to a URL": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Fetch JSON from a URL",
+        "fileName" : "Actions/redirect/redirect_to_url.json"
+    }	
+}

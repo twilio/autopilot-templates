@@ -1,7 +1,6 @@
 {
     "Greeting": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-<<<<<<< HEAD
 		"shortDescription":"Greeting",
         "fileName" : "Actions/say/say_greeting.json"
     }, 
@@ -21,10 +20,3 @@
         "fileName" : "Actions/say/say_goodbye.json"
     }	
 }
-=======
-        "shortDescription":"Say something back to the user",
-        "templateFile":"say_simple.json",
-        "folderName" : "Actions/say"
-    }
-}
->>>>>>> c4508d909321306923e2b5a154133597cf352536

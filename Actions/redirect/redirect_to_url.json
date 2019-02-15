@@ -1,0 +1,10 @@
+{
+    "actions": [
+        {
+            "redirect": {
+                  "uri": "https://myapp.com/actions",
+                  "method": "POST"
+            }
+        }
+    ]
+}

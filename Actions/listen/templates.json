@@ -1,0 +1,12 @@
+{
+    "Listen everything": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Listen and redirect to any task",
+        "fileName" : "Actions/listen/listen_everything.json"
+    }, 
+	"Listen selective": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Listen selectively and redirect to a subset of tasks",
+        "fileName" : "Actions/listen/listen_selective.json"
+    }	
+}

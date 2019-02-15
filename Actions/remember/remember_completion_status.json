@@ -1,0 +1,11 @@
+{
+	"actions": [
+		{
+			"remember": {
+				"open_account_step_1":"complete",
+				"open_account_step_2":"complete",
+				"open_account_step_3":"in_progress"
+			}
+		}
+	]
+}

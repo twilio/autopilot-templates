@@ -1,0 +1,22 @@
+{
+	"actions": [
+		{
+			"collect": {
+				"name": "collect_comments",
+				"questions": [
+					{
+						"question": "Please let us know any comments or feedback on your recent purchase",
+						"name": "comments",
+						"type":"Twilio.YES_NO"
+					}
+				],
+				"on_complete": {
+					"redirect": {
+						"uri":"https://myapp.com/collect",
+						"method":"POST"
+					}
+				}
+			}
+		}
+	]
+}

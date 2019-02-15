@@ -1,0 +1,17 @@
+{
+	"actions": [
+		{
+			"say": {
+				"speech": "What would you like to do? Continue shopping or check out?"
+			}
+		},
+		{
+			"listen": {
+				"tasks": [
+					"search-for-product",
+					"checkout"
+				]
+			}
+		}
+	]
+}

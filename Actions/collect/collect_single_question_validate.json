@@ -1,0 +1,51 @@
+{
+	"actions": [
+		{
+			"say": "Great! I can help you make a reservation. "
+		},
+		{
+			"collect": {
+				"name": "make_reservation",
+				"questions": [
+					{
+						"question": "What's your first name?",
+						"name": "first_name",
+						"type": "Twilio.FIRST_NAME",
+						"validate": {
+							"allowed_values": {
+								"list": [
+									"New York",
+									"San Francisco"
+								]
+							},
+							"on_failure": {
+								"messages": [
+									{
+										"say": "Sorry, that's not a valid start city."
+									},
+									{
+										"say": "Hmm, I'm not understanding. It can be San Francisco or New york."
+									}
+								],
+								"repeat_question": true
+							},
+							"on_success": {
+								"say": "Great, we've got your starting city"
+							},
+							"max_attempts": {
+								"redirect": "task://having-trouble",
+								"num_attempts": 3
+							}
+						}
+					}
+				],
+				"on_complete": {
+					"redirect": {
+						"method": "POST",
+						"uri": "https://debt-great-5089.twil.io/deep_table"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+    "Handoff to Voice TwiML URL": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Handoff to Voice TwiML URL",
+        "fileName" : "Actions/handoff/handoff_voice_twiml_url.json"
+    }, 
+	"Handoff to Voice TwiML URL with status callback": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Handoff to Voice TwiML URL with status callback",
+        "fileName" : "Actions/handoff/handoff_voice_twiml_url_status_callback.json"
+    },
+    "Handoff to Voice Task Router Workflow": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Handoff to Voice Task Router Workflow",
+        "fileName" : "Actions/handoff/handoff_voice_task_router.json"
+    }, 
+	"Handoff to Voice Task Router Workflow with all parameters": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+		"shortDescription":"Handoff to Voice Task Router Workflow with all parameters",
+        "fileName" : "Actions/handoff/handoff_voice_task_router_all_parameters.json"
+    }	
+}
