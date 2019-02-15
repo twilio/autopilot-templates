@@ -1,0 +1,6 @@
+{
+    "Simple Say": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "say"
+    }
+}
