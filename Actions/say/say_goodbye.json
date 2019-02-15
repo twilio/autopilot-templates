@@ -1,7 +1,7 @@
 {
 	"actions": [
 		{
-			"say": "Hello World!"
+			"say": "Welcome to your new Autopilot Assistant."
 		}
 	]
 }
