@@ -1,6 +1,8 @@
 {
     "Simple Say": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "say"
+        "shortDescription":"Say something back to the user",
+        "templateFile":"say_simple.json",
+        "folderName" : "Actions/say"
     }
 }
