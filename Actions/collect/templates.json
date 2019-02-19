@@ -11,7 +11,7 @@
     }, 
 	"Collect single question with validate": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Listen selectively and redirect to a subset of tasks",
-        "fileName" : "Actions/collect/collect_selective.json"
+		"shortDescription":"Listen and validate answer",
+        "fileName" : "Actions/collect/collect_single_question_validate.json"
     }	
 }
