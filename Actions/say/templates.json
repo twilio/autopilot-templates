@@ -21,7 +21,7 @@
     },
 	"Didn't understand": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Fallback: Didn't understand",
+		"shortDescription":"Fallback – Didn't understand",
         "fileName" : "Actions/say/say_didnt_understand.json"
     }
 }
