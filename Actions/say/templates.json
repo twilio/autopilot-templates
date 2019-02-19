@@ -1,7 +1,7 @@
 {
     	"Greeting": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Greeting",
+		"shortDescription":"Hello",
         "fileName" : "Actions/say/say_greeting.json"
     }, 
 	"Task Question": {
