@@ -11,7 +11,7 @@
     }, 
 	"Switch Task": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Switch Task",
+		"shortDescription":"Switch task",
         "fileName" : "Actions/say/say_task_switch.json"
     }, 
 	"Goodbye": {
