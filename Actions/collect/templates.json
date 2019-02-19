@@ -1,17 +1,17 @@
 {
     "Collect Yes No Question": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Ask, listen, and redirect to task",
+		"shortDescription":"Yes / No question",
         "fileName" : "Actions/collect/collect_everything.json"
     }, 
 	"Collect multi-question": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Ask, listen selectively, and redirect to task",
+		"shortDescription":"Multiple questions",
         "fileName" : "Actions/collect/collect_selective.json"
     }, 
 	"Collect single question with validate": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Ask, listen, and validate answer",
+		"shortDescription":"Ask and validate answer",
         "fileName" : "Actions/collect/collect_single_question_validate.json"
     }	
 }
