@@ -1,9 +1,9 @@
 {
 	"actions": [
 		{
-			"say": "Hello World!"
+			"say": "Ok, I can help you with that instead."
 		},{
-			"listen":true
+			"redirect": "task://task-name"
 		}
 	]
 }
