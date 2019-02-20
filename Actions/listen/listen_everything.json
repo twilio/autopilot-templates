@@ -1,11 +1,10 @@
 {
 	"actions": [
 		{
-			"say": {
-				"speech": "Hello! how can I help you"
-			}
-		}, {
-		    "listen":true
+			"say": "Hello! How can I help you?"
+		},
+		{
+			"listen": true
 		}
 	]
 }
