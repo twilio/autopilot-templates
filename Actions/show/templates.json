@@ -1,22 +1,22 @@
 {
     "Show Text": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Show text",
+		"shortDescription":"Display text",
         "fileName" : "Actions/show/show_text.json"
     }, 
 	"Show Image": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Show an image",
+		"shortDescription":"Display an image",
         "fileName" : "Actions/show/show_image.json"
     }, 
 	"Show Image and Text": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Show an image and text",
+		"shortDescription":"Display an image and text",
         "fileName" : "Actions/show/show_image_and_text.json"
     }, 
 	"Show Text and Say": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Show text and say something",
+		"shortDescription":"Display text and say something",
         "fileName" : "Actions/show/show_text_and_say.json"
     }	
 }
