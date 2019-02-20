@@ -1,7 +1,7 @@
 {
 	"actions": [
 		{
-			"say": "Hello World!"
+			"say": "You can get a refund or exchange for another item. What would you like to do?"
 		},{
 			"listen":true
 		}
