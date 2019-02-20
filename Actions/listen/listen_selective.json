@@ -2,7 +2,7 @@
 	"actions": [
 		{
 			"say": {
-				"speech": "What would you like to do? Continue shopping or check out?"
+				"speech": "Which would you like to do: continue shopping or check out?"
 			}
 		},
 		{
