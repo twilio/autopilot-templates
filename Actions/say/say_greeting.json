@@ -1,7 +1,7 @@
 {
 	"actions": [
 		{
-			"say": "Hello World!"
+			"say": "Hi, how can I help you today?"
 		},{
 			"listen":true
 		}
