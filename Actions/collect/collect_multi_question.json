@@ -23,7 +23,7 @@
 						"type": "Twilio.TIME"
 					},
 					{
-						"question": "How many people in your party?",
+						"question": "How many people are in your party?",
 						"name": "party_size",
 						"type": "Twilio.NUMBER"
 					},
