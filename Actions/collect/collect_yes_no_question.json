@@ -5,7 +5,7 @@
 				"name": "collect_comments",
 				"questions": [
 					{
-						"question": "Please let us know any comments or feedback on your recent purchase",
+						"question": "Did you have any issues with your delivery today?",
 						"name": "comments",
 						"type":"Twilio.YES_NO"
 					}
