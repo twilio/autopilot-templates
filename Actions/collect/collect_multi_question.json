@@ -13,22 +13,22 @@
 						"type": "Twilio.FIRST_NAME"
 					},
 					{
-						"question": "For what Date?",
+						"question": "Which date would you like?",
 						"name": "reservation_date",
 						"type": "Twilio.DATE"
 					},
 					{
-						"question": "For what time?",
+						"question": "And, for what time?",
 						"name": "reservation_time",
 						"type": "Twilio.TIME"
 					},
 					{
-						"question": "for how many people?",
+						"question": "How many people in your party?",
 						"name": "party_size",
 						"type": "Twilio.NUMBER"
 					},
 					{
-						"question": "Any special requests?",
+						"question": "Got it. Any special requests?",
 						"name": "special_requests"
 					}
 				],
