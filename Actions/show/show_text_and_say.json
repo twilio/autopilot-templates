@@ -4,8 +4,10 @@
 			"show": {
 				"body": "Booked: Table for 2 at 7pm."
 			}
-			},{
-				"speech":"You're all set. Please have your party of 2 arrive at 7pm."
+		},{
+			"say": {
+				"speech": "You're all set. Please have your party of 2 arrive at 7pm."
 			}
+		  }
 	]
 }
