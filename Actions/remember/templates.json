@@ -1,12 +1,12 @@
 {
     "Simple Remember": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Simple remember",
-        "fileName" : "Actions/remember/remember_simple.json"
+		"shortDescription":"Save any answer",
+        "fileName" : "Actions/remember/remember_user_first_name.json"
     }, 
-	"Task Question": {
+	"Remember completion status": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Ask users what they want do",
+		"shortDescription":"Save completed steps",
         "fileName" : "Actions/remember/remember_completion_status.json"
     }
 }
