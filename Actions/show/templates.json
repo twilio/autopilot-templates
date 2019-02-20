@@ -16,7 +16,7 @@
     }, 
 	"Show Text and Say": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Display text and say something",
+		"shortDescription":"Display text and speak",
         "fileName" : "Actions/show/show_text_and_say.json"
     }	
 }
