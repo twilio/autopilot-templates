@@ -1,12 +1,12 @@
 {
 	"actions": [
 		{
-			"say": "Hold on, we are connecting you with an agent"
+			"say": "I'll connect you with an agent now."
 		},
 		{
 			"handoff": {
 				"channel": "voice",
-				"uri": "taskrouter:// INSERT TASK ROUTER WORKFLOW SID"
+				"uri": "taskrouter://INSERT TASK ROUTER WORKFLOW SID"
 			}
 		}
 	]
