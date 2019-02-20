@@ -1,36 +1,37 @@
 {
 	"actions": [
 		{
-			"say": "Great! I can help you make a reservation. "
-		},
-		{
 			"collect": {
-				"name": "make_reservation",
+				"name": "travel_questions",
 				"questions": [
 					{
-						"question": "What's your first name?",
-						"name": "first_name",
-						"type": "Twilio.FIRST_NAME",
+						"question": "Which city do you want to leave from: New York or San Francisco?",
+						"name": "trip_start",
+						"type": "Twilio.CITY",
 						"validate": {
 							"allowed_values": {
 								"list": [
 									"New York",
-									"San Francisco"
+									"NYC",
+									"JFK",
+									"San Francisco",
+									"SF",
+									"SFO"
 								]
 							},
 							"on_failure": {
 								"messages": [
 									{
-										"say": "Sorry, that's not a valid start city."
+										"say": "That isn't a city I recognize."
 									},
 									{
-										"say": "Hmm, I'm not understanding. It can be San Francisco or New york."
+										"say": "I didn't get that. SF and New York are the options."
 									}
 								],
 								"repeat_question": true
 							},
 							"on_success": {
-								"say": "Great, we've got your starting city"
+								"say": "Got it. I'll get started on an itinerary."
 							},
 							"max_attempts": {
 								"redirect": "task://having-trouble",
@@ -40,10 +41,7 @@
 					}
 				],
 				"on_complete": {
-					"redirect": {
-						"method": "POST",
-						"uri": "https://debt-great-5089.twil.io/deep_table"
-					}
+					"redirect": "https://myapp.com/collect"
 				}
 			}
 		}
