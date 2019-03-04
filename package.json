@@ -1,0 +1,24 @@
+{
+  "name": "@twilio/autopilot-templates",
+  "version": "1.0.1",
+  "description": "Autopilot templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twilio/autopilot-templates.git"
+  },
+  "keywords": [
+    "Twilio",
+    "Autopilot",
+    "templates"
+  ],
+  "author": "Twilio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twilio/autopilot-templates/issues"
+  },
+  "homepage": "https://github.com/twilio/autopilot-templates#readme"
+}
