@@ -1,6 +1,7 @@
 export default [
     {
         name: 'Collect',
+        description: 'Ask questions and save answers from users.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/collect',
         additionalDoc: {
             text: 'Field types',
@@ -23,6 +24,7 @@ export default [
     },
     {
         name: 'Handoff',
+        description: 'Connect users to human agents.',
         docUrl: 'https://www.twilio.com/doc/autopilot/actions/hand-off',
         templates: [{
             name: 'Handoff to Voice Task Router Workflow',
@@ -45,6 +47,7 @@ export default [
     },
     {
         name: 'Listen',
+        description: 'Wait for input from users.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/listen',
         templates: [{
             name: 'Listen everything',
@@ -59,6 +62,7 @@ export default [
     },
     {
         name: 'Redirect',
+        description: 'Direct to a URL or another Task.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/redirect',
         templates: [{
             name: 'Redirect to a task',
@@ -73,6 +77,7 @@ export default [
     },
     {
         name: 'Remember',
+        description: 'Store users’ info that will be reused.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/remember',
         templates: [{
             name: 'Simple Remember',
@@ -87,6 +92,7 @@ export default [
     },
     {
         name: 'Say',
+        description: 'Speak or text a message to users.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/say',
         templates: [{
             name: 'Didn\'t understand',
@@ -113,6 +119,7 @@ export default [
     },
     {
         name: 'Show',
+        description: 'Display images and text on users’ screens.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/show',
         templates: [{
             name: 'Show Image',
