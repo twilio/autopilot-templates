@@ -25,7 +25,7 @@ export default [
     {
         name: 'Handoff',
         description: 'Connect users to human agents.',
-        docUrl: 'https://www.twilio.com/doc/autopilot/actions/hand-off',
+        docUrl: 'https://www.twilio.com/docs/autopilot/actions/hand-off',
         templates: [{
             name: 'Handoff to Voice Task Router Workflow',
             description: 'Pass to Voice Task Router Workflow',
@@ -95,14 +95,6 @@ export default [
         description: 'Speak or text a message to users.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/say',
         templates: [{
-            name: 'Didn\'t understand',
-            description: 'Fallback – Didn\'t understand',
-            example: require('./say/say_didnt_understand')
-        }, {
-            name: 'Goodbye',
-            description: 'Goodbye',
-            example: require('./say/say_goodbye')
-        }, {
             name: 'Greeting',
             description: 'Hello',
             example: require('./say/say_greeting')
@@ -114,6 +106,14 @@ export default [
             name: 'Switch Task',
             description: 'Switch task',
             example: require('./say/say_task_switch')
+        }, {
+            name: 'Didn\'t understand',
+            description: 'Fallback – Didn\'t understand',
+            example: require('./say/say_didnt_understand')
+        }, {
+            name: 'Goodbye',
+            description: 'Goodbye',
+            example: require('./say/say_goodbye')
         }
         ]
     },
