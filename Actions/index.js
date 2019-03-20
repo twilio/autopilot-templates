@@ -1,5 +1,32 @@
 export default [
     {
+        name: 'Say',
+        description: 'Speak or text a message to users.',
+        docUrl: 'https://www.twilio.com/docs/autopilot/actions/say',
+        templates: [{
+            name: 'Greeting',
+            description: 'Hello',
+            example: require('./say/say_greeting')
+        }, {
+            name: 'Task Question',
+            description: 'Ask users what they want do',
+            example: require('./say/say_question')
+        }, {
+            name: 'Switch Task',
+            description: 'Switch task',
+            example: require('./say/say_task_switch')
+        }, {
+            name: 'Didn\'t understand',
+            description: 'Fallback – Didn\'t understand',
+            example: require('./say/say_didnt_understand')
+        }, {
+            name: 'Goodbye',
+            description: 'Goodbye',
+            example: require('./say/say_goodbye')
+        }
+        ]
+    },
+    {
         name: 'Collect',
         description: 'Ask questions and save answers from users.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/collect',
@@ -19,29 +46,6 @@ export default [
             name: 'Collect single question with validate',
             description: 'Ask and validate answer',
             example: require('./collect/collect_single_question_validate')
-        }
-        ]
-    },
-    {
-        name: 'Handoff',
-        description: 'Connect users to human agents.',
-        docUrl: 'https://www.twilio.com/doc/autopilot/actions/hand-off',
-        templates: [{
-            name: 'Handoff to Voice Task Router Workflow',
-            description: 'Pass to Voice Task Router Workflow',
-            example: require('./handoff/handoff_voice_task_router')
-        }, {
-            name: 'Handoff to Voice Task Router Workflow with all parameters',
-            description: 'Pass to Voice Task Router Workflow with all parameters',
-            example: require('./handoff/handoff_voice_task_router_all_parameters')
-        }, {
-            name: 'Handoff to Voice TwiML URL',
-            description: 'Pass to Voice TwiML URL',
-            example: require('./handoff/handoff_voice_twiml_url')
-        }, {
-            name: 'Handoff to Voice TwiML URL with status callback',
-            description: 'Pass to Voice TwiML URL with status callback',
-            example: require('./handoff/handoff_voice_twiml_url_status_callback')
         }
         ]
     },
@@ -76,6 +80,29 @@ export default [
         ]
     },
     {
+        name: 'Handoff',
+        description: 'Connect users to human agents.',
+        docUrl: 'https://www.twilio.com/docs/autopilot/actions/hand-off',
+        templates: [{
+            name: 'Handoff to Voice Task Router Workflow',
+            description: 'Pass to Voice Task Router Workflow',
+            example: require('./handoff/handoff_voice_task_router')
+        }, {
+            name: 'Handoff to Voice Task Router Workflow with all parameters',
+            description: 'Pass to Voice Task Router Workflow with all parameters',
+            example: require('./handoff/handoff_voice_task_router_all_parameters')
+        }, {
+            name: 'Handoff to Voice TwiML URL',
+            description: 'Pass to Voice TwiML URL',
+            example: require('./handoff/handoff_voice_twiml_url')
+        }, {
+            name: 'Handoff to Voice TwiML URL with status callback',
+            description: 'Pass to Voice TwiML URL with status callback',
+            example: require('./handoff/handoff_voice_twiml_url_status_callback')
+        }
+        ]
+    },
+    {
         name: 'Remember',
         description: 'Store users’ info that will be reused.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/remember',
@@ -87,33 +114,6 @@ export default [
             name: 'Remember completion status',
             description: 'Save completed steps',
             example: require('./remember/remember_user_first_name')
-        }
-        ]
-    },
-    {
-        name: 'Say',
-        description: 'Speak or text a message to users.',
-        docUrl: 'https://www.twilio.com/docs/autopilot/actions/say',
-        templates: [{
-            name: 'Didn\'t understand',
-            description: 'Fallback – Didn\'t understand',
-            example: require('./say/say_didnt_understand')
-        }, {
-            name: 'Goodbye',
-            description: 'Goodbye',
-            example: require('./say/say_goodbye')
-        }, {
-            name: 'Greeting',
-            description: 'Hello',
-            example: require('./say/say_greeting')
-        }, {
-            name: 'Task Question',
-            description: 'Ask users what they want do',
-            example: require('./say/say_question')
-        }, {
-            name: 'Switch Task',
-            description: 'Switch task',
-            example: require('./say/say_task_switch')
         }
         ]
     },
