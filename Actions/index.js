@@ -9,7 +9,7 @@ export default [
             example: require('./say/say_greeting')
         }, {
             name: 'Task Question',
-            description: 'Ask users what they want do',
+            description: 'Ask users what they want to do',
             example: require('./say/say_question')
         }, {
             name: 'Switch Task',
