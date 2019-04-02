@@ -1,10 +1,11 @@
 {
-    "Deep Table Restaurant": {
-        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "restaurant_deep_table"
-    },
     "Hello World": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "hello_world"
+    }
+    ,
+	"Deep Table Restaurant": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "restaurant_deep_table"
     }
 }

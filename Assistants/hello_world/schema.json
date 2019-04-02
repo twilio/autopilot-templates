@@ -1,7 +1,7 @@
 {
-    "friendlyName" : "hello-world",
+    "friendlyName" : "hello-world-1553289792138",
     "logQueries" : true,
-    "uniqueName" : "hello-world",
+    "uniqueName" : "hello-world-1553289792138",
     "defaults" : {
         "defaults" : {
             "assistant_initiation" : "task://hello-world",
@@ -13,9 +13,30 @@
     },
     "styleSheet" : {
         "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I'm sorry, can you please say that again"
+                            },
+                            {
+                                "say" : "hmm I still did'nt catch that, can you please repeat"
+                            },
+                            {
+                                "say" : "Let's give it one more try. Please say it one more time"
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
             "voice" : {
-                "say_voice" : "Polly.Salli"
-            }
+                "say_voice" : "Polly.Matthew"
+            },
+            "name" : "Matthew"
         }
     },
     "fieldTypes" : [],
@@ -23,12 +44,9 @@
         {
             "uniqueName" : "hello-world",
             "actions" : {
-                "actions": [
+                "actions" : [
                     {
-                        "say": 
-                        {
-                            "speech" : "Hello World"
-                        }
+                        "say" : { "speech" : "Hello World" }
                     }
                 ]
             },
@@ -40,5 +58,8 @@
                 }
             ]
         }
-    ]
+    ],
+    "modelBuild" : {
+        "uniqueName" : "hello-world-1553289792138"
+    }
 }
