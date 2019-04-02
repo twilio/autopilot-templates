@@ -19,17 +19,17 @@
                         "repeat_question" : false,
                         "messages" : [
                             {
-                                "say" : "I'm sorry, can you please say that again"
+                                "say" : "I didn't get that. What did you say?"
                             },
                             {
-                                "say" : "hmm I still did'nt catch that, can you please repeat"
+                                "say" : "I still didn't catch that. Please repeat."
                             },
                             {
-                                "say" : "Let's give it one more try. Please say it one more time"
+                                "say" : "Let's try one last time. Say it again please."
                             }
                         ]
                     },
-                    "on_success" : { "say" : "" },
+                    "on_success" : { "say" : "Got it." },
                     "max_attempts" : 4
                 }
             },
