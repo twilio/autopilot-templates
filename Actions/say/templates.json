@@ -6,7 +6,7 @@
     }, 
 	"Task Question": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-		"shortDescription":"Ask users what they want do",
+		"shortDescription":"Ask users what they want to do",
         "fileName" : "Actions/say/say_question.json"
     }, 
 	"Switch Task": {
