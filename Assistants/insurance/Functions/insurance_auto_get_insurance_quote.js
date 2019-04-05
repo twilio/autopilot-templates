@@ -35,13 +35,13 @@ exports.handler = function(context, event, callback) {
                             "name":"car_year",
                             "type":"Twilio.NUMBER"
                         }, {
-                            "question":"ok that's all I need. is nico@twilio.com the best email to send you the quote?",
-                            "name":"email_yes",
-                            "type":"Twilio.YES_NO"
+                            "question":"ok that's all I need. What is the best email to send you the quote?",
+                            "name":"email",
+                            "type":"Twilio.EMAIL"
                         }],
                         "on_complete":{
                             "redirect":{
-                                "uri":"https://"+context.DOMAIN_NAME+"/insurance_auto_get_insurance",
+                                "uri":"https://"+context.DOMAIN_NAME+"/insurance_auto_get_insurance_quote",
                                 "method":"POST"
                             }
                         }
@@ -53,7 +53,7 @@ exports.handler = function(context, event, callback) {
     } else {
         console.log("step 1")
         // Confirm Auto insurance  quote
-        message = "Nico, we've sent your auto insurace quote for your 2007 Lamborghini Diablo to your email. Is there anything else I can help you with?";
+        message = "We've sent your auto insurace quote for your 2007 Lamborghini Diablo to your email. Is there anything else I can help you with?";
         responseObject = {
             "actions": [{
                     "remember": {
