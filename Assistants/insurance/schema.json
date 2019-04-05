@@ -253,7 +253,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "say" : "This is your new Task"
+                        "redirect" : ""
                     }
                 ]
             },
