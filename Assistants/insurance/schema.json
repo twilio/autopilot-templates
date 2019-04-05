@@ -45,7 +45,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_nps_survey"
+                        "redirect" : ""
                     }
                 ]
             },
@@ -130,7 +130,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_get_insurance"
+                        "redirect" : ""
                     }
                 ]
             },
@@ -187,13 +187,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "say" : "I'll connect you with an agent now. Please hold on"
-                    },
-                    {
-                        "handoff" : {
-                            "uri" : "taskrouter://INSERT TASK ROUTER WORKFLOW SID",
-                            "channel" : "voice"
-                        }
+                        "redirect" : ""
                     }
                 ]
             },
@@ -332,7 +326,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_claim_status"
+                        "redirect" : ""
                     }
                 ]
             },
@@ -397,7 +391,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://debt-great-5089.twil.io/insurance_greeting"
+                        "redirect" : ""
                     }
                 ]
             },
