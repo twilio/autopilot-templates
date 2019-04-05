@@ -1,0 +1,422 @@
+{
+    "friendlyName" : "InsuranceCo",
+    "logQueries" : true,
+    "uniqueName" : "InsuranceCo",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://insurance_greeting",
+            "fallback" : "task://insurance_fallback",
+            "collect" : {
+                "validate_on_failure" : "task://hello_world"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I'm sorry, can you please say that again"
+                            },
+                            {
+                                "say" : "hmm I still did'nt catch that, can you please repeat"
+                            },
+                            {
+                                "say" : "Let's give it one more try. Please say it one more time"
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "insurance_auto_nps_survey",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_nps_survey"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no  nothing more today thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's it thank you."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "No, that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "No, that would be ohh"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "nada"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "by"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "googbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "end"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "buy"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "insurance_auto_get_insurance_quote",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_get_insurance"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi I'm calling  because I need car insurance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi, I need car insurance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "insure my car"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "auto insurance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "insurance for my car"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "car insurance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to insure my new car"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "new auto insurance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to get my car insured"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need insurance for my car"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to buy car insurance"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "insurance_auto_talk_to_representative",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'll connect you with an agent now. Please hold on"
+                    },
+                    {
+                        "handoff" : {
+                            "uri" : "taskrouter://INSERT TASK ROUTER WORKFLOW SID",
+                            "channel" : "voice"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to talk to someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need advise"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need insurance advise"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need advise"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need help talk with someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to an agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to an advisor"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "representative"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "agent"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "insurance_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sorry I didn't understand, can you please say that again"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "insurance_auto_file_claim",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I got into an accident and need to file a claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "car crash"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I crashed my car"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I got into a car crash"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "report an accident"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "insurance claim please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "file insurance claim please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I file a claim please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do I need to do to file a claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to file an claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "file claim please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to file an insurance claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need file a claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can you help me file a claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to file an insurance claim"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "insurance_auto_check_claim_status",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://debt-great-5089.twil.io/insurance_auto_claim_status"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to check my claim status."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup with my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's up with my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can you please tell me the status of my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I please check my claim status"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "status  of my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need help finding out what is the status of my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can you please let me know what the  status of my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's the status of  my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is the status of my claim"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "claim status"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "claim status please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "check claim status"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "insurance_greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://debt-great-5089.twil.io/insurance_greeting"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                }
+            ]
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.05" }
+}
