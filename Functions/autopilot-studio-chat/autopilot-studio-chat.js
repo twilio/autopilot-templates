@@ -34,15 +34,19 @@ exports.handler = function(context, event, callback) {
             console.log("Parsed "+memory.handoff);
         }
         
-        
         let saysArray = apResponse.says;
         let saysProcessed = 0;
         let responseMessage = "";
         let handoff = "";
         
+        saysArray.forEach(function(value){
+            responseMessage += " "+ value.speech;
+        });
+        
         // if handoff exit
         if (memory.handoff){
             console.log("send to Flex");
+            
              service.channels(channelSid).messages.create({"body": responseMessage, "from": "Autopilot"})
             .then((response) => {
                 console.log("Reponse:"+response);
@@ -53,9 +57,7 @@ exports.handler = function(context, event, callback) {
         }
         
         console.log("send the message");
-        saysArray.forEach(function(value){
-            responseMessage += " "+ value.speech;
-        });
+        
         service.channels(channelSid).messages.create({"body": responseMessage, "from": "Autopilot"})
             .then((response) => {
                 console.log("Reponse:"+response);
