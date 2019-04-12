@@ -4,8 +4,7 @@ exports.handler = function(context, event, callback) {
     
     // Takes the first message, creates the channel webhook
     console.log(event);
-    
-     //
+
     let channelSid = event.channelSid;
     
     const client = context.getTwilioClient();
@@ -27,11 +26,33 @@ exports.handler = function(context, event, callback) {
         // Pipe the Autopilot response to the chat channel
         let apResponse = JSON.parse(response.body);
         console.log(apResponse);
-        console.log("send the message");
+        console.log(apResponse.remember);
+        console.log(apResponse.remember.memory);
+        let memory = {};
+        if (apResponse.remember.memory) { 
+            memory = JSON.parse(apResponse.remember.memory);
+            console.log("Parsed "+memory.handoff);
+        }
+        
+        
         let saysArray = apResponse.says;
         let saysProcessed = 0;
         let responseMessage = "";
+        let handoff = "";
         
+        // if handoff exit
+        if (memory.handoff){
+            console.log("send to Flex");
+             service.channels(channelSid).messages.create({"body": responseMessage, "from": "Autopilot"})
+            .then((response) => {
+                console.log("Reponse:"+response);
+                callback(null, {destination:"flex"});
+            }).catch(error => { 
+                console.log(error); 
+                callback(error); });
+        }
+        
+        console.log("send the message");
         saysArray.forEach(function(value){
             responseMessage += " "+ value.speech;
         });
