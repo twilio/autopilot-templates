@@ -10,5 +10,9 @@
 	"Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "restaurant_deep_table"
+    },
+    "Flight Assistant": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "flight_assistant"
     }
 }
