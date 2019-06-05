@@ -2,6 +2,7 @@
 	"actions": [
 		{
 			"show": {
+				"body": "",
 				"images": [ {
 				    "label": "small",
 				    "url": "https://megacoffe.ai/large_coffee.png"
