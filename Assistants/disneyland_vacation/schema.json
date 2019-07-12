@@ -1,0 +1,287 @@
+{
+    "friendlyName": "DisneylandVacation",
+    "logQueries": true,
+    "uniqueName": "DisneylandVacation",
+    "defaults": {
+        "defaults": {
+            "assistant_initiation": "task://vacation_greeting",
+            "fallback": "task://vacation_fallback",
+            "collect": {
+                "validate_on_failure": "task://vacation_greeting"
+            }
+        }
+    },
+    "styleSheet": {
+        "style_sheet": {
+            "collect": {
+                "validate": {
+                    "on_failure": {
+                        "repeat_question": false,
+                        "messages": [
+                            {
+                                "say": "I'm sorry, I didn't catch that. What did you say?"
+                            },
+                            {
+                                "say": "Hmm, could you please repeat."
+                            },
+                            {
+                                "say": "Let's give it one more try. Please say it again."
+                            }
+                        ]
+                    },
+                    "on_success": {
+                        "say": "Got it!"
+                    },
+                    "max_attempts": 4
+                }
+            },
+            "voice": {
+                "say_voice": "Polly.Joanna"
+            },
+            "name": "Joanna"
+        }
+    },
+    "tasks": [
+        {
+            "uniqueName": "vacation_greeting",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "Welcome to Disneyland's Twilio number. I can tell you today's park schedule, help you make a reservation, or connect you with a travel agent."
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": []
+        },
+        {
+            "uniqueName": "todays_schedule",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "Today's schedule includes Frozen the Musical every hour and a half at the Hyperion Theatre, meet-and-greet with Pixar characters from 1pm-3pm, Fantasmic at 8pm, and fireworks at 9pm."
+                    },
+                    {
+                      "listen": true
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "what is todays schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what is happening today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what events are today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what time is fantasmic today?"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what shows are playing today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "when is fantasmic today?"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "is fantasmic taking place today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what shows are taking place today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "today's showtimes"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "today's showtimes"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "today's performances"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "today's activities"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "activities and times for the day"
+                }
+            ]
+        },
+        {
+            "uniqueName": "buy_tickets",
+            "actions": {
+                "actions": [
+                    {
+                        "collect": {
+                            "name": "trip_details",
+                            "questions": [
+                                {
+                                    "question": {
+                                        "say": "Great, I can help you with that. What's your first name?"
+                                    },
+                                    "name": "first_name",
+                                    "type": "Twilio.FIRST_NAME"
+                                },
+                                {
+                                    "question": {
+                                        "say": "What day would you like your first day in the park to be?"
+                                    },
+                                    "name": "date",
+                                    "type": "Twilio.DATE"
+                                },
+                                {
+                                    "question": {
+                                        "say": "Great, what time will you get here do you think?"
+                                    },
+                                    "name": "time",
+                                    "type": "Twilio.TIME"
+                                },
+                                {
+                                    "question": {
+                                        "say": "Nice, and for how many days would you like to visit the park?"
+                                    },
+                                    "name": "num_days",
+                                    "type": "Twilio.NUMBER"
+                                },
+                                {
+                                    "question": {
+                                        "say": "And for how many people"
+                                    },
+                                    "name": "party_size",
+                                    "type": "Twilio.NUMBER"
+                                }
+                            ],
+                            "on_complete": {
+                                "redirect": "task://confirm_tickets"
+                            }
+                        }
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                  "language": "en-US",
+                  "taggedText": "buy tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "order tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "reserve tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i want to buy tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i wish to order tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i want to buy park tickets"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "can i buy park tickets"
+                },
+                {
+                  "language": "en-US",
+                  "taggedText": "plan a trip"
+                }
+            ]
+        },
+        {
+            "uniqueName": "confirm_tickets",
+            "actions": {
+                "actions": [
+                    {
+                        "say": 
+                        {
+                            "speech": "Ok 'x' name. Your tickets with the 'x' start date at 'x' time for 'x' people is now confirmed. Thank you for booking a trip with us."
+                        }
+                    }
+                ]
+            }
+        }, 
+        {
+            "uniqueName": "vacation_fallback",
+            "actions": {
+                "actions": [
+                    {
+                        "say": " Hold on, we are connecting you with a human."
+                    },
+                    {
+                        "handoff": {
+                            "method": "POST",
+                            "channel": "voice",
+                            "uri": ""
+                        }
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [{
+                    "language": "en-US",
+                    "taggedText": "I'd like to speak to a human"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "I need to speak to a human"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "I want to speak with a human"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "Please I want a real person"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "real person"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "human"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "connect me to human"
+                }
+            ]
+        }
+    ],
+    "modelBuild": {
+        "uniqueName": "v0.01"
+    }
+}
