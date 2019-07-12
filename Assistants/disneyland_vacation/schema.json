@@ -5,7 +5,7 @@
     "defaults": {
         "defaults": {
             "assistant_initiation": "task://vacation_greeting",
-            "fallback": "task://vacation_fallback",
+            "fallback": "task://connect_human",
             "collect": {
                 "validate_on_failure": "task://vacation_greeting"
             }
@@ -55,7 +55,36 @@
                 ]
             },
             "fields": [],
-            "samples": []
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "hello"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how are you"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "sup"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hey"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how's it going"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hey there"
+                }
+            ]
         },
         {
             "uniqueName": "todays_schedule",
@@ -234,7 +263,7 @@
             }
         }, 
         {
-            "uniqueName": "vacation_fallback",
+            "uniqueName": "connect_human",
             "actions": {
                 "actions": [
                     {
@@ -256,7 +285,7 @@
                 },
                 {
                     "language": "en-US",
-                    "taggedText": "I need to speak to a human"
+                    "taggedText": "I need to speak to a person"
                 },
                 {
                     "language": "en-US",
