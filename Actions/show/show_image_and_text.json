@@ -2,11 +2,10 @@
 	"actions": [
 		{
 			"show": {
-				"body": "Order: 1 Large Coffee",
-				"subject":"Summary",
+				"body": "Twilio Owls",
 				"images": [ {
-				    "label": "small",
-				    "url": "https://megacoffe.ai/large_coffee.png"
+				    "label": "Original Owl",
+				    "url": "https://demo.twilio.com/owl.png"
 				    
 				}]
 			}
