@@ -1,0 +1,336 @@
+{
+    "friendlyName" : "Qualify leads",
+    "logQueries" : true,
+    "uniqueName" : "LeadQualification",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "complete_lead_qualification",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thank you. Someone from our sales team will reach out shortly! Have a great day. Goodbye."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "start_lead_qualification",
+            "actions" : {
+                "actions" : [
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "task://complete_lead_qualification"
+                                }
+                            },
+                            "name" : "lead_qual",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.NUMBER",
+                                    "question" : "Great! How many employees do you have?",
+                                    "name" : "lead_qual_employees"
+                                },
+                                {
+                                    "type" : "Twilio.COUNTRY",
+                                    "question" : "Thanks. Which country are you located in?",
+                                    "name" : "lead_qual_country"
+                                },
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Do you have an existing vendor for this?",
+                                    "name" : "lead_qual_yes_no"
+                                },
+                                {
+                                    "type" : "Twilio.PHONENUMBER",
+                                    "question" : "Thanks!Last question. What number should we call to continue the conversation?",
+                                    "name" : "lead_qual_number"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "lets begin"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "okay lets start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "okay"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yeah yeah"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yee"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "lets begin"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yep"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yeah"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hi there! Thanks for your interest in our service. Do you mind answering a few questions to help me connect you to the best person on our sales team?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "goodbye",
+                                "start_lead_qualification"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "No worries. Please reach out if you want to chat again in the future. Goodbye!"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "2" }
+}

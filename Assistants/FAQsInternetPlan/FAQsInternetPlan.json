@@ -1,0 +1,638 @@
+{
+    "friendlyName" : "Answer frequently asked questions",
+    "logQueries" : true,
+    "uniqueName" : "FAQsInternetPlan",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "restart_modem",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Locate the reset button. The router reset button is located on the back of the router. Using a paper clip or pen, gently depress the reset button and hold it until the lights on the front of the modem turn off. After several seconds, the lights on your router will turn back on. You will then need to set up your WiFi network again. Is there anything else I can help with?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do I reset the modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "reset modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start over my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how can I start my modem again"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "is there a way to restart my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what should I do if my internet doesn't work"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "where do i go to restart the modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "is it ok to restart my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "which button do I need to press to restart my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "which button is for restarting"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "restart modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "do i need to restart my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i restart my modem"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "test_speed",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "You can test your internet speed by going to www.speedtest.net. Can I help with anything else?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i see how fast my internet is"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do I test the speed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "is there a way to test how fast my internet is"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how fast is my upload speed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how fast is my download speed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how slow is my upload speed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how fast is my internet"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want to see how fast my internet is"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "where do i go to test the speed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i test my internet speed"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "replace_modem",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "It can cost between $200 to $300 to replace a lost or broken modem. If your modem is more than 3 years old, we can replace it for free. Please use our app or website to request a new modem. Can I help with anything else?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I get a replacement for free"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's the policy to replace my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "are there fees to replace my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want to change my modem, how do i do that"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I get a new modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "my modem broke, I need a new one"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do we get another modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I get a replacement modem?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "where can I get a replacement for my modem"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i get a replacement"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to replace my modem"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "transfer_plan",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Transfering your plan to another address or account is easy and free of charge! Please use our website or app to request a transfer."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I move my plan with me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to transfer my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I use someone else's name for my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "may I put someone else's name on the plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "may I transfer my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I transfer my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What do I need to do to transfer my plan to someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i transfer the plan to someone else"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i'm moving, i need to transfer my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do I transfer my plan"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "cancel_plan",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "You can cancel your plan for free if you have a month-to-month contract. If you have an annual contract, you need to pay the remainder of your contract to cancel. Can I help with anything else?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when can I cancel my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can i cancel without fees"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do we need to do to cancel our plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can I do to cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i don't want my plan anymore, what do I do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can i cancel my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do I need to do to cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "where do I go to cancel my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i cancel my plan"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "change_plan",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "You can transfer your plan for free if you have a month-to-month contract. If you have an annual contract, you can only transfer in the last month of your contract. Can I help with anything else?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do i need to do to change my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i change my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i get an upgrade"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get an upgrade"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get a different plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to upgrade plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want to upgrade"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "want a different plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change my plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a different plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change plan"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "upgrade plan"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "reset_password",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I can help you with that. Click on the 'Forgot Password' button next to the 'Sign In' button in our website or mobile app. Next, choose SMS or email as your recovery option. You'll receive either a text message or an email with a link to reset your password. Click on the link and complete the instructions you see there to reset your password. Can I help with anything else?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do I change my password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "don't know how to reset password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "don't where to go to change my password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "don't know how to change my password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "reset pw"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change pw"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do I change my password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do I do to change my password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "reset password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how to reset password"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how do i reset my password"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hello! I can answer questions about your internet plan, like replacing a modem or transferring and cancelling a plan. What can I help with today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Great. Please reach out again if you have any questions."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like I'm having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.01" }
+}

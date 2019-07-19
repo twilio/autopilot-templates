@@ -1,5 +1,5 @@
 {
-    "friendlyName" : "HelloWorld",
+    "friendlyName" : "Basic starter template",
     "logQueries" : true,
     "uniqueName" : "HelloWorld",
     "defaults" : {
@@ -45,7 +45,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                        "say" : "Looks like I'm having trouble. Apologies for that. Let's start again, how can I help you today?"
                     },
                     { "listen" : true }
                 ]
@@ -71,7 +71,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "say" : "This is your new Task"
+                        "say" : "Thank you! Please reach out again if you need anything. Goodbye."
                     }
                 ]
             },
@@ -79,63 +79,7 @@
             "samples" : [
                 {
                     "language" : "en-US",
-                    "taggedText" : "good bye"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "that's all"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "bye bye"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "see ya"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "stop"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "stop talking"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "goodnight"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "goodbye"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "cancel"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "go away"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "no thanks"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "no"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "that would be all thanks"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "that would be all"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "no thanks"
+                    "taggedText" : "that's all for today"
                 },
                 {
                     "language" : "en-US",
@@ -143,7 +87,63 @@
                 },
                 {
                     "language" : "en-US",
-                    "taggedText" : "that's all for today"
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
                 }
             ]
         },
@@ -161,59 +161,7 @@
             "samples" : [
                 {
                     "language" : "en-US",
-                    "taggedText" : "sup"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "whatsup"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "what do you do"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "what can you do"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "hey"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "yo"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "what'us up"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "hi there."
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "Hello."
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "hi!"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "hi there"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "heya"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "hello"
-                },
-                {
-                    "language" : "en-US",
-                    "taggedText" : "good afternoon"
+                    "taggedText" : "Hi"
                 },
                 {
                     "language" : "en-US",
@@ -221,7 +169,59 @@
                 },
                 {
                     "language" : "en-US",
-                    "taggedText" : "Hi"
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
                 }
             ]
         }
