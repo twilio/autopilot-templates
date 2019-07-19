@@ -1,14 +1,18 @@
 {
     "Hello World": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "hello_world"
+        "folderName" : "HelloWorld"
     },
 	"Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "insurance"
+        "folderName" : "Insurance"
     },
 	"Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "restaurant_deep_table"
+        "folderName" : "RestaurantReservations"
+    },
+    "Flight Assistant": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "AirlineReservations"
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@twilio/autopilot-templates",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Autopilot templates",
   "main": "index.js",
   "scripts": {

@@ -1,0 +1,466 @@
+{
+    "friendlyName" : "RealEstate",
+    "logQueries" : true,
+    "uniqueName" : "RealEstate",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://hello_world",
+            "fallback" : "task://hello_world",
+            "collect" : {
+                "validate_on_failure" : "task://hello_world"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [
+        {
+            "uniqueName" : "typeOfListing",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "Multi Family",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Single Family",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Apartment",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Condominium",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "amenity",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "Pool",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Sauna",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "acceptsDogs",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "yesDogs",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "noDogs",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "allow dogs",
+                    "synonymOf" : "yesDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "accept dogs",
+                    "synonymOf" : "yesDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "allows dogs",
+                    "synonymOf" : "yesDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "allows pet dogs",
+                    "synonymOf" : "yesDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "dogs are allowed",
+                    "synonymOf" : "yesDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "dogs are not allowed",
+                    "synonymOf" : "noDogs"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "dogs not allowed",
+                    "synonymOf" : "noDogs"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "numBedrooms",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "1",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "studio",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "5",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "3",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "4",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "2",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "6",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "7",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "9",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "8",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "10",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "seven",
+                    "synonymOf" : "7"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "ten",
+                    "synonymOf" : "10"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "eight",
+                    "synonymOf" : "8"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "nine",
+                    "synonymOf" : "9"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "six",
+                    "synonymOf" : "6"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "a couple",
+                    "synonymOf" : "2"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "two",
+                    "synonymOf" : "2"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "four",
+                    "synonymOf" : "4"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "three",
+                    "synonymOf" : "3"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "five",
+                    "synonymOf" : "5"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "a",
+                    "synonymOf" : "1"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "one",
+                    "synonymOf" : "1"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "a single",
+                    "synonymOf" : "1"
+                }
+            ]
+        }
+    ],
+    "tasks" : [
+        {
+            "uniqueName" : "question.open_house_schedule",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are the times of the open house"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when can I visit?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when Can I visit."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I visit."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "open house?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Do you have an open house?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when can I go and visit"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when is the next open house"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "schedule_visit",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book a visit"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "schedule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "schedule visit"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I schedule a visit"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "question.pets_allowed",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is  the pet policy"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can you have pets"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "are pets allowed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "do you allow pets"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "query_rent_listings",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [
+                {
+                    "uniqueName" : "areaUpperBound",
+                    "fieldType" : "Twilio.NUMBER"
+                },
+                {
+                    "uniqueName" : "areaLowerBound",
+                    "fieldType" : "Twilio.NUMBER"
+                },
+                {
+                    "uniqueName" : "amenity",
+                    "fieldType" : "amenity"
+                },
+                {
+                    "uniqueName" : "rentUpperBound",
+                    "fieldType" : "Twilio.NUMBER"
+                },
+                {
+                    "uniqueName" : "rentLowerBound",
+                    "fieldType" : "Twilio.NUMBER"
+                },
+                {
+                    "uniqueName" : "us_state",
+                    "fieldType" : "Twilio.US_STATE"
+                },
+                {
+                    "uniqueName" : "city",
+                    "fieldType" : "Twilio.CITY"
+                },
+                {
+                    "uniqueName" : "acceptsDogs",
+                    "fieldType" : "acceptsDogs"
+                },
+                {
+                    "uniqueName" : "numBathrooms",
+                    "fieldType" : "Twilio.NUMBER"
+                },
+                {
+                    "uniqueName" : "numBedrooms",
+                    "fieldType" : "numBedrooms"
+                }
+            ],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} bed, {numBathrooms} baths under {rentLowerBound} per month"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} beds {numBathrooms} bathrooms in {city} {us_state} from {rentLowerBound} and under {rentUpperBound} that {acceptsDogs} with a {amenity}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} beds / {numBathrooms} bathrooms"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} bedrooms in {city}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} beds {numBathrooms} baths in {city} {us_state} from {rentLowerBound} and under {rentUpperBound} that {acceptsDogs} with a {amenity}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} in {city}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} bedrooms {numBathrooms} baths in {city} {us_state} from {rentLowerBound} and under {rentUpperBound} that {acceptsDogs} with a {amenity}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} bedroom {numBathrooms} bath in {city} {us_state} from {rentLowerBound} and under {rentUpperBound} that {acceptsDogs} with a {amenity}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{numBedrooms} bedrooms {numBathrooms} in {city} {us_state}"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.01" }
+}

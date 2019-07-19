@@ -1,0 +1,230 @@
+{
+    "friendlyName" : "HelloWorld",
+    "logQueries" : true,
+    "uniqueName" : "HelloWorld",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hello, what can I help you with today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                }
+            ]
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.1" }
+}

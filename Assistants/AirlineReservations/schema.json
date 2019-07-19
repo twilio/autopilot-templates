@@ -1,0 +1,519 @@
+{
+    "friendlyName" : "flight_assistant",
+    "logQueries" : true,
+    "uniqueName" : "flight_assistant",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://welcome_message",
+            "fallback" : "https://white-binturong-9697.twil.io/fallback-message",
+            "collect" : {
+                "validate_on_failure" : "task://hello_world"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I'm sorry, can you please say that again"
+                            },
+                            {
+                                "say" : "hmm I still didn't catch that, can you please repeat"
+                            },
+                            {
+                                "say" : "Let's give it one more try. Please say it one more time"
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "change_flight",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Got it. I'm going to get you connected to the next available agent to help you reschedule your flight."
+                    },
+                    {
+                        "redirect" : "https://white-binturong-9697.twil.io/send-to-agent"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to switch flights"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need a new flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I didn't catch my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Missed my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Missed flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I missed my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I must change my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change my flight itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to change my flight itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to modify my flight details"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to modify my flight information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify my flight details"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify my flight information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "update my flight information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "pick a different time for my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change my flight times"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change my itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify my itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "re-book flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "rebook flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "miss flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm going to miss my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to change my flight"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "book_flight",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'd like to get a few details before connecting you to one of our amazing agents."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "https://white-binturong-9697.twil.io/book-confirmation"
+                                }
+                            },
+                            "name" : "flight_details",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.CITY",
+                                    "question" : "Where are you flying from?",
+                                    "name" : "departure_city"
+                                },
+                                {
+                                    "type" : "Twilio.CITY",
+                                    "question" : "Where are you flying to?",
+                                    "name" : "destination_city"
+                                },
+                                {
+                                    "type" : "Twilio.DATE",
+                                    "question" : "What day are you planning to travel?",
+                                    "name" : "date"
+                                },
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Is this a round trip?",
+                                    "name" : "roundtrip"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to book a flight."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to book an itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Create itinerary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Help me find a flight please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Book me a flight, please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Please help me book a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Please help me find a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to find a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Sign up for a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Find a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Please create a new flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book travel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Book flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to book a flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to book travel"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "get_flight_time",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sure, I can help you find your flight details."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "https://white-binturong-9697.twil.io/flight-details"
+                                }
+                            },
+                            "name" : "get_details",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.FIRST_NAME",
+                                    "question" : "What is your legal first name?",
+                                    "name" : "first_name"
+                                },
+                                {
+                                    "type" : "Twilio.LAST_NAME",
+                                    "question" : "What is your legal last name?",
+                                    "name" : "last_name"
+                                },
+                                {
+                                    "type" : "Twilio.CITY",
+                                    "question" : "What city are you departing from?",
+                                    "name" : "departure_city"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What are my flight details?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What details are for my flight?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need my flight details"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What are my flight details"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Get flight details"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What time does my flight land"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What time does my flight take off"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What time does my flight leave"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What time is my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When does my flight take off"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Is my flight late"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Is my flight on time"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When does my flight check in"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When is my flight landing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When is my flight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need my flight times"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What are my flight times"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "send_to_agent",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://white-binturong-9697.twil.io/send-to-agent"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like an agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Speak to an agent please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Speak to an agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Speak to agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Agent please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Agent please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "This isn't working"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need an agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Talk to an agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Switch to agent"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "welcome_message",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Welcome to Owl Airlines. How can we help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Whats up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Heyo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "How's it going"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Lets start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Begin"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "BEGIN"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "begin"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "INITIATE"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "START"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "initiate"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Initiate"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Start"
+                }
+            ]
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "V2" }
+}
