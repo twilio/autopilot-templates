@@ -1,3 +1,3 @@
-Twilio Autopilot Assistant Templates
+Twilio Autopilot Bot Templates
 ===========================
-Templates for creating Twilio Autopilot Assistants
+Templates for creating Twilio Autopilot Bots
