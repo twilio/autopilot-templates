@@ -18,7 +18,7 @@ You can find out more about Twilio Autopilot here:
 Templates provide samples for creating Twilio Autopilot Bots, Actions, StyleSheets, and Functions.
 
 #### Bots
-A bot is a conversational application designed to simulate cionversation with human user using machine learning and natural language understanding.
+A bot is a conversational application designed to simulate conversation with human user using machine learning and natural language understanding.
 
 [Autopilot Assistants](https://www.twilio.com/docs/autopilot/api/assistant)
 
