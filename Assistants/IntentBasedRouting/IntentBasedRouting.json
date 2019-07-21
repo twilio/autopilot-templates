@@ -1,0 +1,470 @@
+{
+    "friendlyName" : "Connect people to different departments in a company",
+    "logQueries" : true,
+    "uniqueName" : "IntentBasedRouting",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "talk_to_front_desk",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Perfect, I'll connect you with the front desk."
+                    },
+                    {
+                        "handoff" : {
+                            "method" : "POST",
+                            "channel" : "voice",
+                            "uri" : "https://handler.twilio.com/twiml/EHec1bbf48c2000f95f0506e6c1c54af72"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "agent"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "not sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need help"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "the receptionist"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "the front desk"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Front Desk."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "front desk"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "reception"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "talk_to_investor_relations",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for contacting Investor Relations. I'll connect you right away."
+                    },
+                    {
+                        "handoff" : {
+                            "method" : "POST",
+                            "channel" : "voice",
+                            "uri" : "https://handler.twilio.com/twiml/EHec1bbf48c2000f95f0506e6c1c54af72"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help investors"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "investors"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Investor relations."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "relations with investors"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "investor folks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to investor relations"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "investor information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "IR"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to IR."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "investor relations"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "talk_to_support",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for contacting support. I'll connect you with a customer support representative."
+                    },
+                    {
+                        "handoff" : {
+                            "method" : "POST",
+                            "channel" : "voice",
+                            "uri" : "https://handler.twilio.com/twiml/EHec1bbf48c2000f95f0506e6c1c54af72"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "someone to help me troubleshoot"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to customer service."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to support"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "customer support please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "my product is not working"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "support please."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "customer service please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "customer service"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "support"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need support"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "talk_to_sales",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for contacting sales. I'll connect you with a sales representative shortly."
+                    },
+                    {
+                        "handoff" : {
+                            "method" : "POST",
+                            "channel" : "voice",
+                            "uri" : "https://handler.twilio.com/twiml/EHec1bbf48c2000f95f0506e6c1c54af72"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "have some questions about the product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "learn more about the product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to find out pricing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Sales."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Talk to sales."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to a salesperson"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to someone in sales"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "talk to sales"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sales please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sales"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hi, thanks for contacting us. I can put you in touch with sales, support, investor relations, or our front desk. Who do you like to talk to today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "This is your new Task"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.1" }
+}

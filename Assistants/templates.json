@@ -11,8 +11,40 @@
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "RestaurantReservations"
     },
-    "Flight Assistant": {
+    "Airline Reservations": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "AirlineReservations"
+    },
+    "Appointment Scheduling": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "ApptScheduling"
+    },
+    "Customer Satisfaction Survey": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "CustomerSatisfactionSurvey"
+    },
+    "Disneyland Vacation": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "DisneylandVacation"
+    },
+    "FAQs": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "FAQsInternetPlan"
+    },
+    "Hospitality": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "Hospitality"
+    },   
+    "Intent Based Routing": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "IntentBasedRouting"
+    },
+    "Lead Qualification": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "LeadQualification"
+    },
+    "Real Estate": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "RealEstate"
     }
 }

@@ -1,0 +1,353 @@
+{
+    "friendlyName" : "Run a CSAT survey",
+    "logQueries" : true,
+    "uniqueName" : "CustomerSatisfactionSurvey",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "complete_survey",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thank you so much for your time. If you answered yes to the last question, we'll reach out to schedule a customer research session with you. Goodbye!"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "start_survey",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thank you for making the time for this survey. Your answers help us improve the service!"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "task://complete_survey"
+                                }
+                            },
+                            "name" : "csat_answers",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.NUMBER",
+                                    "question" : "How likely are you to recommend our service on a scale of 1 to 10?",
+                                    "name" : "nps_score"
+                                },
+                                {
+                                    "question" : "Thanks! And what is the primary reason for your score?",
+                                    "name" : "nps_reason"
+                                },
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Do you want to participate in customer research sessions in the future?",
+                                    "name" : "research_yes_no"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Begin"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yea"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yes yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yeah"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Lets do this"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yep"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yes"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hi! Can you spare a few minutes to answer a few questions about your experience?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "start_survey",
+                                "goodbye"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Let's start the customer satisfaction survey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "CSAT"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Start the CSAT survey please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to take the survey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "customer satisfaction survey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start survey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "No worries. Please reach out if you want to take the survey in the future. Goodbye!"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "2" }
+}

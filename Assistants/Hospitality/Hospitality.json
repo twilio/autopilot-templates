@@ -1,0 +1,756 @@
+{
+    "friendlyName" : "Deliver room service and items for the hotel room",
+    "logQueries" : true,
+    "uniqueName" : "Hospitality",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [
+        {
+            "uniqueName" : "Custom.ROOMITEMS",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "toilet paper",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "towel",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "towels",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "toothpaste",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "toothbrush",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hangers",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hanger",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "slippers",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "laundry bag",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "slipper",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "lighter",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "napkins",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "matches",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "charger",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bottle opener",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bandaids",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Custom.FOOD",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "burger",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "coffee",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "tacos",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "tea",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pizza",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "fries",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "orange juice",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "eggs",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "apple juice",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cereal",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "milk",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "oatmeal",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "salmon",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "salad",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "soup of the day",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "butter",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bread",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "chicken",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "jam",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "porkchop",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "steak",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "wrap",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pork",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "rice",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hot sauce",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pepper",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "ketchup",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mustard",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hamburger",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cake",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pickles",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cookies",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "muffin",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hot dogs",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cookie",
+                    "synonymOf" : null
+                }
+            ]
+        }
+    ],
+    "tasks" : [
+        {
+            "uniqueName" : "get_quantity",
+            "actions" : {
+                "actions" : [
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "task://complete_collect_roomitems"
+                                }
+                            },
+                            "name" : "quantity_of_item",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.NUMBER",
+                                    "question" : "How many would you like?",
+                                    "name" : "quantity"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [
+                {
+                    "uniqueName" : "item",
+                    "fieldType" : "Custom.ROOMITEMS"
+                }
+            ],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "send {item} please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "may we have {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I have more {item}?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me more {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "deliver another {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "do you have more {item}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "deliver {item}"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "complete_collect_roomservice",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Your order will take about 45 minutes. What else can I help you with meantime?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "complete_collect_roomitems",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Your items will be dropped off within 10 minutes. What else can I help you with?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "order_roomservice",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Our kitchen is open and serving the full menu."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "task://complete_collect_roomservice"
+                                }
+                            },
+                            "name" : "order_food",
+                            "questions" : [
+                                {
+                                    "type" : "Custom.FOOD",
+                                    "question" : "What would you like to eat?",
+                                    "name" : "Food"
+                                },
+                                {
+                                    "question" : "Got it. Any special requests?",
+                                    "name" : "special_requests"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i need food"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i'm hungry"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I order food please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "is the kitchen open?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "room service"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i'd like to order room service"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to order lunch"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "dinner"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "breakfast"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me room service"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me food"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "deliver food to my room"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "deliver_roomitems",
+            "actions" : {
+                "actions" : [
+                    { "say" : "Ok!" },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "task://complete_collect_roomitems"
+                                }
+                            },
+                            "name" : "deliver_roomitems",
+                            "questions" : [
+                                {
+                                    "type" : "Custom.ROOMITEMS",
+                                    "question" : "What would you like?",
+                                    "name" : "item"
+                                },
+                                {
+                                    "type" : "Twilio.NUMBER",
+                                    "question" : "How many do you need?",
+                                    "name" : "quantity"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "missing things for the room"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "missing items"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "extra items"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "things for the room"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "items for the room"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "room items"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "deliver room items"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i need items for the room"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me toiletries"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i need toiletries"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hi, I can get you items for your room and order you room service. How can I help?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Ok, I'll be here when you need me."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "nothing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like I'm having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "7" }
+}

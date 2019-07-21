@@ -1,0 +1,563 @@
+{
+    "friendlyName" : "Manage appointment scheduling",
+    "logQueries" : true,
+    "uniqueName" : "ApptScheduling",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like you having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Ok, I'll be here when you need me."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for contacting our store! I can help you book a new appointment, modify an existing one or tell you about upcoming appointments. How can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "book_appointments",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay lets get you a new appointment. I just need you to answer a few questions."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "task://complete_booking"
+                            },
+                            "name" : "schedule_appt",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.DATE",
+                                    "question" : "Please tell me the date you want to come in.",
+                                    "name" : "appt_date"
+                                },
+                                {
+                                    "type" : "Twilio.TIME",
+                                    "question" : "Thanks, and what time?",
+                                    "name" : "appt_time"
+                                },
+                                {
+                                    "type" : "Twilio.PHONE_NUMBER",
+                                    "question" : "Awesome, last question. What is the best number to reach you on?",
+                                    "name" : "appt_phone_number"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [
+                {
+                    "uniqueName" : "ApptDate",
+                    "fieldType" : "Twilio.DATE"
+                },
+                {
+                    "uniqueName" : "ApptTime",
+                    "fieldType" : "Twilio.TIME"
+                }
+            ],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book appointment for {ApptTime} on {ApptDate}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I get a new appointment on {ApptDate}?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book appointment for {ApptDate}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to book an appointment on {ApptDate} at {ApptTime}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "book appointment for {ApptTime}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want an appointment at {ApptTime} on {ApptDate}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I have a new appointment at {ApptTime} on {ApptDate}?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I get a new appointment at {ApptTime} on {ApptDate}?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I get an appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I book a new appointment please?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I get a new appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'd like to make a new appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to make an appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "New appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "make appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a new appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I make a new appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "New appointment please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Get me a new appointment please."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "get me a new appointment"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "list_appointments",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Your next appointment is on July 1st at 4.30 pm. I can always help you reschedule or cancel it."
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "cancel_appointments",
+                                "change_appointments",
+                                "goodbye"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what time is my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "when do I come in?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me when I'm scheduled for"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "manage my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's my upcoming appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When is my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When is my next appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When am I due to come in next?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When is my next appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Next appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "When do I come in next?"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "cancel_appointments",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay I've cancelled your appointment. What else can I help you with?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "book_appointments",
+                                "list_appointments",
+                                "goodbye"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel appt"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can't make my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "need to cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can't come in"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to cancel my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Cancel appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Please cancel my appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can you help me cancel my appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to cancel my session"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to cancel my appointment please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "change_appointments",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay I've changed your appointment to July 3rd at 4.30 pm. What else can I help you with?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "cancel_appointments",
+                                "list_appointments",
+                                "goodbye"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "move appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "move my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "change appt"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "modify appt"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Please help me change my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I can't make it anymore, can you help me change my appointment?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I need to change my appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Change appointment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Change my appointment"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "complete_booking",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks! I've booked your appointment. See you soon :)"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "5" }
+}
