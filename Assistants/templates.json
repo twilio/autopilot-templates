@@ -3,11 +3,11 @@
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "HelloWorld"
     },
-	"Conversational Insurance Company": {
+    "Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "Insurance"
     },
-	"Deep Table Restaurant": {
+    "Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "RestaurantReservations"
     },
