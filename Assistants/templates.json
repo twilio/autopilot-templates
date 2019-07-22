@@ -5,7 +5,7 @@
     },
     "Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "Insurance"
+        "folderName" : "insurance"
     },
     "Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
