@@ -1,11 +1,25 @@
 {
     "Hello World": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "HelloWorld"
+        "folderName" : "HelloWorld",
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "Hi"
+        }, {
+            "author": "bot",
+            "message" : "Hello, what can I help you with today?"
+        }, {
+            "author": "user",
+            "message" : "nothing"
+        }, {
+            "author": "bot",
+            "message" : "Reach out anytime you need anything. Goodbye."
+        }]
     },
     "Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "insurance"
+        "folderName" : "insurance",
+        "conversationExample" : []
     },
     "Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -13,38 +27,113 @@
     },
     "Airline Reservations": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "AirlineReservations"
+        "folderName" : "AirlineReservations",
+        "conversationExample" : []
     },
     "Appointment Scheduling": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "ApptScheduling"
+        "folderName" : "ApptScheduling",
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "I want to make an appointment"
+        }, {
+            "author": "bot",
+            "message" : "What date do you want to come in?"
+        }, {
+            "author": "user",
+            "message" : "tomorrow"
+        }, {
+            "author": "bot",
+            "message" : "Thanks, what time would you like to come in?"
+        }]
     },
     "Customer Satisfaction Survey": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "CustomerSatisfactionSurvey"
+        "folderName" : "CustomerSatisfactionSurvey",
+        "conversationExample" : [{
+            "author": "bot",
+            "message" : "How likely are you to recommend our service on a scale of 1 to 10?"
+        }, {
+            "author": "user",
+            "message" : "9"
+        }, {
+            "author": "bot",
+            "message" : "Thanks! And what is the primary reason for your score?"
+        }, {
+            "author": "user",
+            "message" : "Answered my questions and offered a solution."
+        }]
     },
     "Disneyland Vacation": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "DisneylandVacation"
+        "folderName" : "DisneylandVacation",
+        "conversationExample" : []
     },
     "FAQs": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "FAQsInternetPlan"
+        "folderName" : "FAQsInternetPlan",
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "Hi"
+        }, {
+            "author": "bot",
+            "message" : "Hello! I can answer questions about your internet plan."
+        }, {
+            "author": "user",
+            "message" : "How do I cancel my plan?"
+        }, {
+            "author": "bot",
+            "message" : "If you have an annual contract, you need to pay the remainder of your contract to cancel."
+        }]
     },
     "Hospitality": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "Hospitality"
-    },   
+        "folderName" : "Hospitality",
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "I need towels"
+        }, {
+            "author": "bot",
+            "message" : "How many would you like?"
+        }, {
+            "author": "user",
+            "message" : "3 large towels"
+        }, {
+            "author": "bot",
+            "message" : "Your items will be dropped off within 10 minutes. What else can I help you with?"
+        }]
+    },
     "Intent Based Routing": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "IntentBasedRouting"
+        "folderName" : "IntentBasedRouting",
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "my product isn't working"
+        }, {
+            "author": "bot",
+            "message" : "Thanks for contacting support. I'll connect you with a customer support representative."
+        }]
     },
     "Lead Qualification": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "LeadQualification"
+        "folderName" : "LeadQualification",
+        "conversationExample" : [{
+            "author": "bot",
+            "message" : "How many employees do you have?"
+        }, {
+            "author": "user",
+            "message" : "45"
+        }, {
+            "author": "bot",
+            "message" : "Last question. What's the best number to reach you to continue the conversation?"
+        }, {
+            "author": "user",
+            "message" : "510-555-5555"
+        }]
     },
     "Real Estate": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "RealEstate"
+        "folderName" : "RealEstate",
+        "conversationExample" : []
     }
 }
