@@ -14,21 +14,26 @@
         }, {
             "author": "bot",
             "message" : "Reach out anytime you need anything. Goodbye."
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "insurance",
-        "conversationExample" : []
+        "conversationExample" : [],
+        "includeAsTemplate":false
     },
     "Deep Table Restaurant": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
-        "folderName" : "RestaurantReservations"
+        "folderName" : "RestaurantReservations",
+        "conversationExample" : [],
+        "includeAsTemplate":false
     },
     "Airline Reservations": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "AirlineReservations",
-        "conversationExample" : []
+        "conversationExample" : [],
+        "includeAsTemplate":false
     },
     "Appointment Scheduling": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -45,7 +50,8 @@
         }, {
             "author": "bot",
             "message" : "Thanks, what time would you like to come in?"
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Customer Satisfaction Survey": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -62,12 +68,14 @@
         }, {
             "author": "user",
             "message" : "Answered my questions and offered a solution."
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Disneyland Vacation": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "DisneylandVacation",
-        "conversationExample" : []
+        "conversationExample" : [],
+        "includeAsTemplate":false
     },
     "FAQs": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -84,7 +92,8 @@
         }, {
             "author": "bot",
             "message" : "If you have an annual contract, you need to pay the remainder of your contract to cancel."
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Hospitality": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -101,7 +110,8 @@
         }, {
             "author": "bot",
             "message" : "Your items will be dropped off within 10 minutes. What else can I help you with?"
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Intent Based Routing": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -112,7 +122,8 @@
         }, {
             "author": "bot",
             "message" : "Thanks for contacting support. I'll connect you with a customer support representative."
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Lead Qualification": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -129,11 +140,13 @@
         }, {
             "author": "user",
             "message" : "510-555-5555"
-        }]
+        }],
+        "includeAsTemplate":true
     },
     "Real Estate": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "RealEstate",
-        "conversationExample" : []
+        "conversationExample" : [],
+        "includeAsTemplate":true
     }
 }
