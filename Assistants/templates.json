@@ -15,7 +15,7 @@
             "author": "bot",
             "message" : "Reach out anytime you need anything. Goodbye."
         }],
-        "includeAsTemplate":true
+        "includeAsTemplate":false
     },
     "Conversational Insurance Company": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
@@ -146,7 +146,13 @@
     "Real Estate": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "RealEstate",
-        "conversationExample" : [],
+        "conversationExample" : [{
+            "author": "user",
+            "message" : "Are pets allowed?"
+        }, {
+            "author": "bot",
+            "message" : "Only cats are allowed."
+        }],
         "includeAsTemplate":true
     }
 }
