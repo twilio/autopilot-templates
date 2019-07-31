@@ -203,7 +203,7 @@
                                 }
                             ],
                             "on_complete": {
-                                "redirect": "task://confirm_tickets"
+                                "redirect": "https://rosewood-starling-9398.twil.io/disneyreservation"
                             }
                         }
                     }
@@ -249,19 +249,6 @@
                 }
             ]
         },
-        {
-            "uniqueName": "confirm_tickets",
-            "actions": {
-                "actions": [
-                    {
-                        "say": 
-                        {
-                            "speech": "Ok 'x' name. Your tickets with the 'x' start date at 'x' time for 'x' people is now confirmed. Thank you for booking a trip with us."
-                        }
-                    }
-                ]
-            }
-        }, 
         {
             "uniqueName": "connect_human",
             "actions": {
