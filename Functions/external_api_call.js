@@ -8,7 +8,7 @@ exports.handler = function(context, event, callback) {
     console.log(event);
     
 
-    got.post('https://icanhazdadjoke.com/', 
+    got.get('https://icanhazdadjoke.com/', 
     { 
         headers: { 
             'accept': 'application/json'
