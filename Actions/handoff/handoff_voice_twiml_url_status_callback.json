@@ -6,7 +6,7 @@
 		{
 			"handoff": {
 				"channel": "voice",
-				"uri": "INSET YOUR TWIML_URL HERE",
+				"uri": "INSERT YOUR TWIML_URL HERE",
 				"method": "POST",
 				"voice_status_callback_url": "INSERT STATUS_CALLBACK_URL HERE",
 				"voice_status_callback_method": "POST"

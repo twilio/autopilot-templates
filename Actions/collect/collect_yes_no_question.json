@@ -12,7 +12,7 @@
 				],
 				"on_complete": {
 					"redirect": {
-						"uri":"https://myapp.com/collect",
+						"uri":"https://example.com/collect",
 						"method":"POST"
 					}
 				}

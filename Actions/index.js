@@ -122,10 +122,6 @@ export default [
         description: 'Display images and text on users’ screens.',
         docUrl: 'https://www.twilio.com/docs/autopilot/actions/show',
         templates: [{
-            name: 'Show Image',
-            description: 'Display an image',
-            example: require('./show/show_image')
-        }, {
             name: 'Show Image and Text',
             description: 'Display an image and text',
             example: require('./show/show_image_and_text')
