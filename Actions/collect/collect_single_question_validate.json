@@ -41,7 +41,7 @@
 					}
 				],
 				"on_complete": {
-					"redirect": "https://myapp.com/collect"
+					"redirect": "https://example.com/collect"
 				}
 			}
 		}

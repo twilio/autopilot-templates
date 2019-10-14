@@ -2,7 +2,7 @@
     "actions": [
         {
             "redirect": {
-                  "uri": "https://myapp.com/actions",
+                  "uri": "https://example.com/actions",
                   "method": "POST"
             }
         }
