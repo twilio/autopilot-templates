@@ -1,0 +1,364 @@
+{
+    "friendlyName": "EventBot",
+    "logQueries": true,
+    "uniqueName": "EventBot",
+    "defaults": {
+        "defaults": {
+            "assistant_initiation": "task://event_greeting",
+            "fallback": "task://connect_human",
+            "collect": {
+                "validate_on_failure": "task://event_greeting"
+            }
+        }
+    },
+    "styleSheet": {
+        "style_sheet": {
+            "collect": {
+                "validate": {
+                    "on_failure": {
+                        "repeat_question": false,
+                        "messages": [
+                            {
+                                "say": "I'm sorry, I didn't catch that. What did you say?"
+                            },
+                            {
+                                "say": "Hmm, could you please repeat."
+                            },
+                            {
+                                "say": "Let's give it one more try. Please say it again."
+                            }
+                        ]
+                    },
+                    "on_success": {
+                        "say": "Got it!"
+                    },
+                    "max_attempts": 4
+                }
+            },
+            "voice": {
+                "say_voice": "Polly.Joanna"
+            },
+            "name": "Joanna"
+        }
+    },
+    "tasks": [
+        {
+            "uniqueName": "event_greeting",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "Welcome to this event! I am the event bot. You can ask me for help, directions, the schedule, and more!"
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "hello"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how are you"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "sup"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hey"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how's it going"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hey there"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what's up"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "hi there"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "salutations"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "greetings"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "who is this"
+                }
+            ]
+        },
+        {
+            "uniqueName": "schedule",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "The event schedule is shown at {insert event schedule URL}"
+                    },
+                    {
+                      "listen": true
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "what is todays schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what is happening today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what events are today"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "when is lunch"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "time"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "when can i see"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "what time"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "when"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "conference schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "event schedule"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "today's activities"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "activities and times for the day"
+                }
+            ]
+        },
+        {
+            "uniqueName": "code_of_conduct",
+            "actions": {
+                "actions": [
+                    {
+                        "collect": {
+                            "name": "code_of_conduct",
+                            "questions": [
+                                {
+                                    "question": {
+                                        "say": "We're sorry you have a code of conduct complaint or issue. You can view our code of conduct here: https://2019.cascadiajs.com/code-of-conduct. What exactly happened?"
+                                    },
+                                    "name": "conduct_issue"
+                                }
+                            ],
+                            "on_complete": {
+                                "redirect": "https://REPLACE-WITH-YOUR-TWILIO-FUNCTION-URL.twil.io/REPLACE-WITH-EVENT-NAME-MAYBE"
+                            }
+                        }
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                  "language": "en-US",
+                  "taggedText": "event organizers"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "code of conduct"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "code of conduct issue"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "complaint"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i have an issue"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i'd like to speak to an organizer"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "contact organizer"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "raise a code of conduct issue"
+                },
+                {
+                  "language": "en-US",
+                  "taggedText": "i need help"
+                }
+            ]
+        },
+        {
+            "uniqueName": "wifi",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "The WiFi password is {replace-with-wifi-password}"
+                    },
+                    {
+                        "listen": true
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "wifi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "internet"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "event wifi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "conference wifi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how do i connect to the wifi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how do i get on the wifi"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "get on the internet"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "wifi password"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "internet"
+                }
+            ]
+        },
+        {
+            "uniqueName": "venue_map",
+            "actions": {
+                "actions": [
+                    {
+                        "say": "Below and at this link are a  map of the venue: {INSERT-MAP-OF-VENUE-IMG-URL}"
+                    },
+                    {
+                        "show": {
+                            "images": [
+                                {
+                                    "label": "{INSERT-LABEL-1}",
+                                    "url": "{INSERT-MAP-URL-TO-PNG-IE-HOSTED-ON-AWS}"
+                                }
+                            ],
+                            "body": "venue"
+                        }
+                    }
+                ]
+            },
+            "fields": [],
+            "samples": [
+                {
+                    "language": "en-US",
+                    "taggedText": "venue"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "map"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "map of venue"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "where is lunch"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "bathrooms"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "where are the bathrooms"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i can't find the bathroom"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "i'm lost"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "where do i go"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "where can i find"
+                },
+                {
+                    "language": "en-US",
+                    "taggedText": "how do i get there"
+                }
+            ]
+        }
+        
+    ],
+    "modelBuild": {
+        "uniqueName": "v0.01"
+    }
+}
