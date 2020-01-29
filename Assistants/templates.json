@@ -77,6 +77,12 @@
         "conversationExample" : [],
         "includeAsTemplate":false
     },
+    "EventBot": {
+        "gitUrl": "https://github.com/twilio/autopilot-templates.git",
+        "folderName" : "EventBot",
+        "conversationExample" : [],
+        "includeAsTemplate":false
+    },
     "FAQs": {
         "gitUrl": "https://github.com/twilio/autopilot-templates.git",
         "folderName" : "FAQsInternetPlan",
