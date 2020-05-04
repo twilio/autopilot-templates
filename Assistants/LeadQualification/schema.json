@@ -82,7 +82,7 @@
                                     "name" : "lead_qual_yes_no"
                                 },
                                 {
-                                    "type" : "Twilio.PHONENUMBER",
+                                    "type" : "Twilio.PHONE_NUMBER",
                                     "question" : "Thanks!Last question. What number should we call to continue the conversation?",
                                     "name" : "lead_qual_number"
                                 }
