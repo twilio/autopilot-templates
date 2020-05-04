@@ -144,7 +144,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "say" : "Hi there! Thanks for your interest in our service. Do you mind answering a few questions to help me connect you to the best person on our sales team?"
+                        "say" : "Hi there! Thanks for your interest in our service. May I ask you a few questions to help me connect you to the best person on our sales team?"
                     },
                     {
                         "listen" : {
